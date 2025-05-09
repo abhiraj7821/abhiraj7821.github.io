@@ -3,718 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhishek Rajput - AI Developer Portfolio</title>
-    <style>
-        :root {
-            --background: #121212;
-            --text-primary: #ffffff;
-            --text-secondary: #aaaaaa;
-            --accent: #444444;
-            --hover: #555555;
-            --container-bg: #1a1a1a;
-            --transition-speed: 0.3s;
-        }
-
-        .light-mode {
-            --background: #f5f5f5;
-            --text-primary: #121212;
-            --text-secondary: #444444;
-            --accent: #e0e0e0;
-            --hover: #d0d0d0;
-            --container-bg: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-
-        body {
-            background-color: var(--background);
-            color: var(--text-primary);
-            transition: background-color var(--transition-speed), color var(--transition-speed);
-            overflow-x: hidden;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--text-primary);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 30px;
-        }
-
-        nav ul li a {
-            position: relative;
-            padding: 5px 0;
-        }
-
-        nav ul li a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--text-primary);
-            transition: width var(--transition-speed);
-        }
-
-        nav ul li a:hover:after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 5rem;
-            margin-bottom: 20px;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-            animation: fadeInUp 1s ease-out 0.3s;
-            animation-fill-mode: both;
-        }
-
-        
-
-        /* Section Styling */
-        section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            font-size: 4rem;
-            margin-bottom: 40px;
-            position: relative;
-        }
-        .section-title-2{
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-            animation: fadeInUp 1s ease-out 0.3s;
-            position: relative;
-            animation-fill-mode: both;
-        }
-        .section p{
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-            animation: fadeInUp 1s ease-out 0.3s;
-            animation-fill-mode: both;
-        }
-        .section-title:after {
-            content: '';
-            position: absolute;
-            width: 100px;
-            height: 2px;
-            background-color: var(--text-primary);
-            bottom: -10px;
-            left: 0;
-        }
-
-        /* About Section */
-        .about-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .about-text {
-            line-height: 1.6;
-            color: var(--text-secondary);
-        }
-
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill-tag {
-            background-color: var(--accent);
-            padding: 5px 15px;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            transition: background-color var(--transition-speed);
-        }
-
-        .skill-tag:hover {
-            background-color: var(--hover);
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .project-card {
-            background-color: var(--container-bg);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform var(--transition-speed);
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-image {
-            height: 200px;
-            width: 100%;
-            overflow: hidden;
-            background-color: #333;
-            object-fit: fill;
-            
-        }
-        .project-image img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover; /* or "fill" or "contain" based on need */
-            display: block;
-        }
-
-        .project-content {
-            padding: 20px;
-        }
-
-        .project-title {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .project-description {
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-            line-height: 1.4;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
-        }
-
-        .project-tag {
-            background-color: var(--accent);
-            padding: 3px 10px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-        }
-
-        /* Resume Section */
-        .resume-container {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        .resume-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .download-button {
-            background-color: var(--accent);
-            padding: 10px 20px;
-            border-radius: 4px;
-            transition: background-color var(--transition-speed);
-        }
-
-        .download-button:hover {
-            background-color: var(--hover);
-        }
-
-        .experience-item {
-            margin-bottom: 30px;
-        }
-
-        .job-title {
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-        }
-
-        .job-company {
-            color: var(--text-secondary);
-            margin-bottom: 10px;
-        }
-
-        .job-description {
-            color: var(--text-secondary);
-            line-height: 1.4;
-        }
-
-        /* Contact Section */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        input, textarea {
-            padding: 10px;
-            background-color: var(--container-bg);
-            border: 1px solid var(--accent);
-            color: var(--text-primary);
-            border-radius: 4px;
-            font-size: 1rem;
-            transition: border-color var(--transition-speed);
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--text-primary);
-        }
-
-        button {
-            padding: 10px 20px;
-            background-color: var(--accent);
-            color: var(--text-primary);
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color var(--transition-speed);
-        }
-
-        button:hover {
-            background-color: var(--hover);
-        }
-
-        .connect-links {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .connect-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .connect-icon {
-            width: 20px;
-            height: 20px;
-            fill: var(--text-primary);
-        }
-
-        /* Footer */
-        footer {
-            padding: 20px 0;
-            text-align: center;
-            color: var(--text-secondary);
-            margin-top: 40px;
-        }
-
-        /* Mode Toggle */
-        .mode-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            width: 40px;
-            height: 40px;
-            background-color: var(--container-bg);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            z-index: 100;
-            transition: background-color var(--transition-speed);
-        }
-
-        .mode-toggle:hover {
-            background-color: var(--hover);
-        }
-
-        .toggle-icon {
-            width: 20px;
-            height: 20px;
-            fill: var(--text-primary);
-            transition: transform var(--transition-speed);
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-            
-            .section-title {
-                font-size: 2.5rem;
-            }
-            
-            .about-container,
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-            
-            nav ul {
-                display: none;
-            }
-        }
-    </style>
+    <title>Abhishek Rajput</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="" href="./assists/canvaImg.png">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">AR</div>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#resume">Resume</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <!-- <li><a href="#blog">Blog</a></li> -->
-                </ul>
-            </nav>
-        </header>
-    </div>
+    <div class="main">
+        <div class="page1">
+            <div class="nav">
+                <h5>ABHISHEK RAJPUT</h5>
+                <i class="ri-menu-3-line"></i>
+            </div>
+            <div class="elms">
+                <div class="elem1">
+                    <div class="image-dev">
+                        <img src="./assists/1.png" alt="">
+                    </div>
+                    <h4>Prompt| Wrangler <span>NEW</span></h4>
+                    <p>I build intelligent systems with brains (AI), beauty (design), and balance (backend logic). Whether it’s talking agents, RAG pipelines, or jaw-dropping interfaces—you name it, I’ve built it or I'm building it.</p>
+                </div>
+                <div class="elem2">
+                    <h2>Developer.</h2>
+                    <h3>An Software(AI) Engineer<br> Web Artist. <br> Human (most days).</h3>
+                    <h6>Hi, I’m Abhishek Rajput.</h6>
+                </div>
+                <div class="elem3">
+                    <div class="image-dev">
+                        <img src="./assists/2.png" alt="">
+                    </div>
+                    <h4>AI work | Dev  <span>NEW</span></h4>
+                    <p>I specialize in crafting smart applications that don't just work—they wow. With experience across LLMs, LangChain, multi-modal voice assistants, and blazing-fast Python backends, I bring art and engineering together on the web canvas. Oh, and I’ve got a flair for visuals too—thank you, CSS muscles and Canva marathons.
 
-    <section class="hero">
-        <p>AI Developer | Agentic Systems | LLM Enthusiast</p>
-        <h1>Abhishek Rajput</h1>
-        
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <!-- <li><a href="#blog">Blog</a></li> -->
-            </ul>
-        </nav>
-    </section>
-
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">Background</h2>
-            <div class="about-container">
-                <div class="about-text">
-                    <p>👋 Hi, I'm Abhishek Rajput!
-                        I am an AI/ML engineer with a Minor in AI from IIT Ropar, specializing in Deep Learning, NLP, and Computer Vision. I have experience in building, optimizing, and deploying ML models using TensorFlow, PyTorch, and MLOps tools.
-                        <br><br>
-                        Currently Learning: RNNs, GRUs, NLPs at IIT Ropar
-                        Tech Stack: Python, TensorFlow, PyTorch, FastAPI, Docker, MLflow, Pandas, NumPy
-                        Passionate About: AI-driven innovation, MLOps, and solving real-world problems with ML
                     </p>
                 </div>
-                <div>
-                    <h3>Skills</h3>
-                    <div class="skills-container">
-                        <div class="skill-tag">Python</div>
-                        <div class="skill-tag">PyTorch</div>
-                        <div class="skill-tag">TensorFlow</div>
-                        <div class="skill-tag">Scikit-learn</div>
-                        <div class="skill-tag">LangChain</div>
-                        <div class="skill-tag">LLMs (GPT, Llama, etc.)</div>
-                        <div class="skill-tag">Agentic Frameworks</div>
-                        <div class="skill-tag">FastAPI</div>
-                        <div class="skill-tag">React</div>
-                        <div class="skill-tag">Docker</div>
-                        <div class="skill-tag">GCP/AWS</div>
-                    </div>
-                </div>
-            </div>
 
-            <h2 class="section-title" style="margin-top: 60px;">AI & ML Interests</h2>
-            <div class="about-text">
-                <p>My core interests lie in Large Language Models, Agentic AI systems capable of complex reasoning and action, and applying Reinforcement Learning to real-world challenges. I'm constantly exploring new architectures, prompt engineering techniques, and the ethical considerations surrounding AI development.</p>
-                <p>I teach machines to think… well, at least to classify cats and dogs correctly! 😆</p>
+            </div>
+            <h1>CODE AI</h1>
+        </div>
+
+        <div class="page2">
+            <div class="page2-left">
+                <h2>Model <br><span>Surgeon!</span></h2>
+                <img src="./assists/anime-img.png" alt="">
+                <p><span>Y</span>ou know, just a few casual things I built when I wasn’t busy pretending to be productive. These AI-powered creations are the result of too much coffee, questionable sleep schedules, and an unhealthy curiosity about how machines think. Enjoy.</p>
+            </div>
+            <div class="page2-right">
+                <img src="./assists/anime-img2.png" alt="">
+                <h1>AI developer & web design artist blending brains and pixels—currently brewing code in Bangalore.</h1>
             </div>
         </div>
-    </section>
 
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            
-            <p class="section-title-2">You know, just a few casual things I built when I wasn’t busy pretending to be productive. These AI-powered creations are the result of too much coffee, questionable sleep schedules, and an unhealthy curiosity about how machines think. Enjoy.</p>
-            <br>
-            <div class="projects-grid">
-                <a href="https://rehydrateai.streamlit.app/" class="project-card">
-                    <div class="project-image">
-                        <img src="Assets/hydration_ai.png" alt="Project Image" />
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Water Intake Agent</h3>
-                        <p class="project-description">Your personal hydration herald. Because staying hydrated is apparently a task requiring AI supervision now.</p>
-                        <div class="project-tags">
-                            <div class="project-tag">Python</div>
-                            <div class="project-tag">LangChain</div>
-                            <div class="project-tag">LLM</div>
-                            <div class="project-tag">FastAPI</div>
-                            <div class="project-tag">React</div>
-                        </div>
-                    </div>
-                </a>
-                <a href="https://chatany.streamlit.app/" class="project-card">
-                    <div class="project-image">
-                        <img src="Assets/rag_img.webp" alt="Project Image" />
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">AskAny</h3>
-                        <p class="project-description">Multi-LLM RAG magic. Finally, multiple AI opinions that actually reference something other than themselves.</p>
-                        <div class="project-tags">
-                            <div class="project-tag">React</div>
-                            <div class="project-tag">Python</div>
-                            <div class="project-tag">Pinecone</div>
-                            <div class="project-tag">Multiple LLMs</div>
-                            <div class="project-tag">RAG</div>
-                        </div>
-                    </div>
-                </a>
-                <a href="https://github.com/abhiraj7821/AIML-Projects/tree/main/Jarvis%20My%20Voice%20Assistant" class="project-card">
-                    <div class="project-image">
-                        <img src="Assets/jarvis_img.webp" alt="Project Image" />
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Jarvis</h3>
-                        <p class="project-description">A voice assistant aspiring to greatness, currently mastering the art of 'Did you say...?'. Patience required.</p>
-                        <div class="project-tags">
-                            <div class="project-tag">Python</div>
-                            <div class="project-tag">Speech Recognition</div>
-                            <div class="project-tag">NLP</div>
-                            <div class="project-tag">Raspberry Pi</div>
-                            <div class="project-tag">FastAPI</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+        <div class="page3">
+            <h1>WEBSITE</h1>
+            <img src="./assists/canvaImg.png" alt="">
         </div>
-    </section>
 
-    <section id="resume">
-        <div class="container">
-            <div class="resume-header">
-                <h2 class="section-title">Resume</h2>
-                <a href="https://drive.google.com/file/d/1c8vWisMhEzCO-z3urFcmSDVGPwAJ5f7V/view?usp=sharing" class="download-button">Download PDF</a>
-            </div>
-            <div class="resume-container">
-                <div>
-                    <!-- <h3>Experience</h3>
-                    <div class="experience-item">
-                        <h4 class="job-title">AI Research Intern</h4>
-                        <p class="job-company">Inkers AI | Oct 2023 - Present</p>
-                        <p class="job-description">Developed and optimized CV models for edge deployment, researched GANs for synthetic data generation, and built RAG pipelines for diverse document types.</p>
+        <div class="page4">
+            <p>Work Experience</p>
+            <div class="most-outer-div">
+                <div class="outer-div">
+                    <div class="inner-div">
+                        <h1>Looking for new opportunites!</h1>
+                        <span>Available from March 2025</span>
+                        <p>Whether you're looking for an expert for a cool digital project - or have a full-time job opportunity, you can easily reach me by reaching me out  </p>
                     </div>
-                    <div class="experience-item">
-                        <h4 class="job-title">Data Science Intern</h4>
-                        <p class="job-company">Celebal Technologies | Jun 2023 - Jul 2023</p>
-                        <p class="job-description">Developed a Python script for text analysis, built a Streamlit app for visualization, and performed sentiment analysis on Amazon reviews.</p>
-                    </div>
-                    <div class="experience-item">
-                        <h4 class="job-title">Data Analytics Intern</h4>
-                        <p class="job-company">High Radius | Feb 2023 - Apr 2023</p>
-                        <p class="job-description">Analyzed AR data using SQL and Python, created Power BI dashboards, and identified key factors influencing payment delays.</p>
-                    </div> -->
                 </div>
-                <div class="Education">
-                    <h1>Education</h1>
-                    <br>
-                    <div class="experience-item">
-                        <h4 class="job-title">Minor In AI</h4>
-                        <p class="job-company">Indian Institutes of Technology,Ropar | 2024 - 2025</p>
-                        <h4 class="job-title">B.Tech in Mech</h4>
-                        <p class="job-company">J. Sawant College of Engineering,Pune | 2020 - 2024</p>
-                        
+                <div class="outer-div">
+                    <div class="inner-div">
+                        <h1>Indipendent/Freelancer</h1>
+                        <span>from 2022-2024</span>
+                        <div class="text">
+                            <span>UI/UX Design</span>,
+                            <span>FrontEnd</span>,
+                            <br>
+                            <span>Branding</span>,
+                            <span>Interaction</span>,
+                            <br>
+                            <span>Illustration</span>,
+                            <span>3D Design</span></div>
+                    </div>
+                </div>
+                <div class="outer-div">
+                    <div class="inner-div">
+                        <h1>Agent Development</h1>
+                        <span>Witty & Fun</span>
+                        <p>Building intelligent agents that think, talk, and take action—so you don’t have to.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Send a Message</h2>
-            <div class="contact-container">
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" placeholder="Your Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="your.email@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" rows="5" placeholder="Tell me about your project or just say hi..."></textarea>
-                    </div>
-                    <button type="submit">Send Message</button>
-                </form>
-                <div class="connect-links">
-                    <h2 class="section-title">Connect</h2>
-                    <div class="connect-item">
-                        <svg class="connect-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path>
-                        </svg>
-                        <a href="https://www.linkedin.com/in/abhiraj7821/" target="_blank">LinkedIn</a>
-                    </div>
-                    <div class="connect-item">
-                        <svg class="connect-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
-                        </svg>
-                        <a href="https://github.com/abhiraj7821" target="_blank">GitHub</a>
-                    </div>
-                    <div class="connect-item">
-                        <svg class="connect-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
-                        </svg>
-                        <a href="mailto:abhiraj7821@icloud.com">Email</a>
-                    </div>
-                </div>
-            </div>
+        <div class="page5">
+            <h1>Let's create something together <span>EMAIL ME</span></h1>
+            <h1>Let's create something together <span>EMAIL ME</span></h1>
+            <h1>Let's create something together <span>EMAIL ME</span></h1>
+            <h1>Let's create something together <span>EMAIL ME</span></h1>
         </div>
-    </section>
-
-    <!-- <section id="blog" style="display: none;">
-        <div class="container">
-            <h2 class="section-title">Blog</h2>
-            <p>Coming soon...</p>
-        </div>
-    </section> -->
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Abhishek Rajput. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <div class="mode-toggle" id="mode-toggle">
-        <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM12 2a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zm10-9a1 1 0 0 1 0 2h-2a1 1 0 0 1 0-2h2zM4 10a1 1 0 0 1 0 2H2a1 1 0 0 1 0-2h2zm16.36-5.36a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0zM6.34 17.66a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0zm12.73 1.41a1 1 0 0 1-1.41 0l-1.42-1.41a1 1 0 1 1 1.42-1.42l1.41 1.42a1 1 0 0 1 0 1.41zM5.05 6.34a1 1 0 0 1-1.41 0L2.23 4.92a1 1 0 1 1 1.42-1.41L5.05 4.93a1 1 0 0 1 0 1.41z"></path>
-            <path d="M12 6a.75.75 0 0 1 .75.75v6.75H18a.75.75 0 0 1 0 1.5h-6a.75.75 0 0 1-.75-.75V6.75A.75.75 0 0 1 12 6z"></path>
-        </svg>
-    </div>
-
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 100,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Dark/Light mode toggle
-        const modeToggle = document.getElementById('mode-toggle');
-        const body = document.body;
         
-        modeToggle.addEventListener('click', () => {
-            body.classList.toggle('light-mode');
-            
-            // Update toggle icon based on mode
-            const isDarkMode = !body.classList.contains('light-mode');
-            modeToggle.innerHTML = isDarkMode 
-                ? '<svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM12 2a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zm10-9a1 1 0 0 1 0 2h-2a1 1 0 0 1 0-2h2zM4 10a1 1 0 0 1 0 2H2a1 1 0 0 1 0-2h2zm16.36-5.36a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0zM6.34 17.66a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0zm12.73 1.41a1 1 0 0 1-1.41 0l-1.42-1.41a1 1 0 1 1 1.42-1.42l1.41 1.42a1 1 0 0 1 0 1.41zM5.05 6.34a1 1 0 0 1-1.41 0L2.23 4.92a1 1 0 1 1 1.42-1.41L5.05 4.93a1 1 0 0 1 0 1.41z"></path></svg>' 
-                : '<svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM12 2a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zm10-9a1 1 0 0 1 0 2h-2a1 1 0 0 1 0-2h2zM4 10a1 1 0 0 1 0 2H2a1 1 0 0 1 0-2h2zm16.36-5.36a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0zM6.34 17.66a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0zm12.73 1.41a1 1 0 0 1-1.41 0l-1.42-1.41a1 1 0 1 1 1.42-1.42l1.41 1.42a1 1 0 0 1 0 1.41zM5.05 6.34a1 1 0 0 1-1.41 0L2.23 4.92a1 1 0 1 1 1.42-1.41L5.05 4.93a1 1 0 0 1 0 1.41z"></path></svg>';
-        });
+        <div class="page6">
+            <div class="left">
+                <h1>Abhishek rajput©</h1>
+                <img src="./assists/canvaImg.png" alt="">
+                <span>legal</span>
+            </div>
+            <div class="right">
+                <a href="https://www.linkedin.com/in/abhiraj7821/">LINKEDIN</a>
+                <a href="https://www.instagram.com/abhiraj.in_/">INSTAGRAM</a>
+                <a href="https://github.com/abhiraj7821">GITHUB</a>
+                <a href="">X</a>
+                <a href="abhiraj7821@gmail.com">MAIL</a>
+            </div>
+        </div>
 
-        // Form submission handling
-        const contactForm = document.querySelector('.contact-form');
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            // Basic validation
-            if (!name || !email || !message) {
-                alert('Please fill out all fields.');
-                return;
-            }
-            
-            // In a real scenario, you would send this data to a server
-            alert('Message sent! (This is a demo)');
-            
-            // Clear form
-            contactForm.reset();
-        });
-    </script>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+    <script src="script.js"></script>
 </body>
 </html>
