@@ -65,12 +65,24 @@ html,body{
 
 
 .elms{
-    height: 300px;
     display: flex;
     align-items: center;
     background-color:#C4BCB3;
     justify-content: space-between;
     padding: 40px 60px;
+}
+
+.elem1 a{
+    text-decoration: none;
+    color: rgb(185, 37, 37);
+}
+.elem2 a{
+    text-decoration: none;
+    color: rgb(185, 37, 37);
+}
+.elem3 a{
+    text-decoration: none;
+    color: rgb(185, 37, 37);
 }
 
 .elem1{
@@ -292,6 +304,7 @@ html,body{
     right: 0;
 }
 
+
 /* .page4{
     height: 500px;
     background-color:#C4BCB3;
@@ -414,6 +427,19 @@ html,body{
     text-decoration: none;
     color: black;
 }
+
+
+.work{
+    background-color: #C4BCB3;
+    display: flex;
+    justify-content: center;
+}
+.work h1{
+    font-family: canopee;
+    font-size: 2em;
+    border-bottom: 1px solid #1c1c19;
+}
+
 
 
 /* ANIMATIONS */
@@ -690,3 +716,4 @@ img {
 .main > div:not(.page1) {
     clear: both;
 }
+
