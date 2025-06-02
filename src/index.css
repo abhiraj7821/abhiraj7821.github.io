@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@font-face {
+    font-family: ppFont;
+    src: url('./assets/ppmori.ttf');
+}
+
+*{
+    font-family: ppFont;
+    overflow-x: hidden;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+
+.elem h1{
+    transition: all ease 0.5s;
+}
+
+.elem:hover h1{
+    transform: translateY(-100%);
+}
+
+.elem img{
+    transition: all ease 0.2s;
+    transform: translateY(10%) rotate(2deg);
+}
+
+.elem:hover img{
+    opacity: 1;
+    transform: translateY(0%) rotate(0deg);
+}
+
+
+
+.box1 h4, .box1 h2{
+    transition: all ease 0.2s;
+    opacity: 40%;
+}
+
+.box1:hover h4, .box1:hover h2{
+    opacity: 1;
+}
+
+.box2 h4, .box2 h2{
+    transition: all ease 0.2s;
+    opacity: 40%;
+}
+
+.box2:hover h4, .box2:hover h2{
+    opacity: 1;
+}
+
+.cursor{
+    transition: background-image textContent ease 0.2s;
+    background-position: center;
+    background-size: cover;
+}
+
+.page1 a:hover{
+    
+}
