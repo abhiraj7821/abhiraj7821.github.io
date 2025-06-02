@@ -154,7 +154,7 @@ function App() {
         <div className="page1 min-h-[100vh] max-sm:min-h-[50vh] relative ">
 
           <div className='nav flex items-center justify-between pr-[5vw]'>
-            <div className="nav1 h-[7rem] w-[7rem]"><img src="src/assets/logo.png" alt="" /></div>
+            <div className="nav1 h-[7rem] w-[7rem]"><img src="/logo.png" alt="" /></div>
             <div className="nav2 flex gap-5 text-[0.7vw]">
 
               <a className='border-b-1 border-white ' href="#">Home</a>
@@ -169,7 +169,7 @@ function App() {
           <h1 className='text-[7vw] mt-[8vw] ml-[12vw]'>Abhishek Rajput</h1>
           <h2 className='text-[7vw] ml-[23vw] -mt-[4vw]'>Designer & Developer</h2>
 
-          <video className='w-[60%] mt-[10vw] relative left-[50%] -translate-x-[50%]' autoPlay muted={true} loop src="src/assets/abhishek.mp4"></video>
+          <video className='w-[60%] mt-[10vw] relative left-[50%] -translate-x-[50%]' autoPlay muted={true} loop src="/abhishek.mp4"></video>
         </div>
         <div id='about' className="page2 min-h-[90vh] max-sm:mt-[15vh] max-sm:min-h-[70vh] w-[100%] p-[5vw] text-black max-sm:text-white border-b-[1px] border-[#6c6c6c] relative">
           <h1 className='text-[7vw] font-extralight '>Hi👋🏻,I'm Just a Dev Who Can’t Stop Designing</h1>
@@ -190,33 +190,33 @@ function App() {
 
           <div className='flex justify-between mt-[10vw]'>
             <div className=''>
-              <img className='h-[30vw] mt-[10vw]' src="src/assets/img1.jpg" alt="" />
+              <img className='h-[30vw] mt-[10vw]' src="/img1.jpg" alt="" />
               <h4 className='text-end mt-[10px]'>Strategy<span className='text-[0.8rem]'>, Website, Illustreation</span></h4>
             </div>
             <div className=''>
-              <video onClick={handelVideoClick} className='h-[30vw]' autoPlay muted loop src="src/assets/proj1.mp4" projectlink="https://abhishekrajput.in/thirtysixstudio/"></video>
+              <video onClick={handelVideoClick} className='h-[30vw]' autoPlay muted loop src="/proj1.mp4" projectlink="https://abhishekrajput.in/thirtysixstudio/"></video>
               <h4 className=' mt-[10px]'>ThirtySixStudio <span className='text-[0.8rem]'>Strategy, Website</span></h4>
             </div>
           </div>
 
           <div className='flex justify-between mt-[10vw]'>
             <div className=''>
-              <video onClick={handelVideoClick} projectlink="https://abhishekrajput.in/SundownStudio/" className='h-[30vw]' autoPlay muted loop src="src/assets/proj2.mp4"></video>
+              <video onClick={handelVideoClick} projectlink="https://abhishekrajput.in/SundownStudio/" className='h-[30vw]' autoPlay muted loop src="/proj2.mp4"></video>
               <h4 className=' mt-[10px]'>Sundown Studio <span className='text-[0.8rem]'>Strategy, Website</span></h4>
             </div>
             <div className=''>
-              <img className='h-[30vw] mt-[10vw]' src="src/assets/img2.jpg" alt="" />
+              <img className='h-[30vw] mt-[10vw]' src="/img2.jpg" alt="" />
               <h4 className='text-end mt-[10px]'>About <span className='text-[0.8rem]'>ReactJS | NodeJS </span></h4>
             </div>
           </div>
 
           <div className='flex justify-between mt-[10vw] text-white'>
             <div className=''>
-              <img className='h-[30vw] mt-[10vw]' src="src/assets/img3.jpg" alt="" />
+              <img className='h-[30vw] mt-[10vw]' src="/img3.jpg" alt="" />
               <h4 className='text-end mt-[10px]'>Crafting code <span className='text-[0.8rem]'> Illustreation</span></h4>
             </div>
             <div className=''>
-              <video onClick={handelVideoClick} projectlink="https://abhishekrajput.in/GTAVI/" className='h-[30vw]' autoPlay muted loop src="src/assets/proj3.mp4"></video>
+              <video onClick={handelVideoClick} projectlink="https://abhishekrajput.in/GTAVI/" className='h-[30vw]' autoPlay muted loop src="/proj3.mp4"></video>
               <h4 className=' mt-[10px]'>GTAVI <span className='text-[0.8rem]'>Strategy, Website</span></h4>
             </div>
           </div>
