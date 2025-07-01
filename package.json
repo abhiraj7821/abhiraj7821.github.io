@@ -1,6 +1,5 @@
 {
   "name": "portfolio",
-  "homepage": "https://abhiraj7821.github.io/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,14 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@tailwindcss/vite": "^4.1.8",
-    "gh-pages": "^6.3.0",
     "gsap": "^3.13.0",
     "locomotive-scroll": "^5.0.0-beta.21",
     "react": "^19.1.0",
