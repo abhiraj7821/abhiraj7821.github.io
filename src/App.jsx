@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { gsap } from "gsap";
 import { useGSAP } from '@gsap/react';
+import {Route, Routes} from 'react-router-dom'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LocomotiveScroll from 'locomotive-scroll';
 gsap.registerPlugin(ScrollTrigger);
@@ -113,7 +114,7 @@ function App() {
     cursor.style.borderRadius='0';
   }
 
-  const handleCursorImageLeave = (e)=>{
+  const handleCursorImageLeave = ()=>{
     const cursor=document.querySelector('.cursor');
     cursor.style.width='1.2vw';
     cursor.style.height='1.2vw';
@@ -128,7 +129,7 @@ function App() {
     window.location.href = `${projectlink}`;
   }
 
-  const getInHandler = (e) => {
+  const getInHandler = () => {
     window.location.href = 'mailto:abhiraj7821@gmail.com'
   }
 
@@ -145,6 +146,9 @@ function App() {
   }
 
   return (
+
+    <Routes>
+      <Route path='/' element={
     <div className="body">
 
       <div className="cursor  h-[1.2vw] w-[1.2vw] absolute z-10 rounded-full bg-[#EDBFFF] object-center object-cover text-white text-[1.2vw] flex justify-center items-center"></div>
@@ -154,8 +158,8 @@ function App() {
         <div className="page1 min-h-[100vh] max-sm:min-h-[50vh] relative ">
 
           <div className='nav flex items-center justify-between pr-[5vw]'>
-            <div className="nav1 h-[7rem] w-[7rem]"><img src="/logo.png" alt="" /></div>
-            <div className="nav2 flex gap-5 text-[0.7vw]">
+            <div className="nav1 h-[8vw] w-[8vw] "><img src="/logo.png" alt="" /></div>
+            <div className="nav2 flex gap-5 text-[0.7vw] max-sm:text-[1.5vw]">
 
               <a className='border-b-1 border-white ' href="#">Home</a>
               <a href="#work">Work</a>
@@ -307,11 +311,84 @@ function App() {
                 <a href="https://x.com/Abhiraj7821i">X</a>
               </div>
             </div>
+            <div><p>Privacy</p>
+              <a className='opacity-75' href='/privacy-policy'>Privacy Policy</a>
+            </div>
           </div>
         </div>
 
       </div>
     </div>
+  }/>
+
+      <Route path='/privacy-policy' element={
+        <div>
+          <div className='nav flex items-center justify-between pr-[5vw]'>
+            <div className="nav1 h-[7rem] w-[7rem]"><img src="/logo.png" alt="" /></div>
+            <div className="nav2 flex gap-5 text-[0.7vw]">
+
+              <a className='border-b-1 border-white ' href="/">Home</a>
+              <a href="#work">Work</a>
+              <a href="#about">About</a>
+              <a href="#contact">Contact</a>
+
+            </div>
+            <div className="nav3 h-[1rem] w-[1rem] bg-white rounded-full"></div>
+          </div>
+
+          <h1 className='text-center text-[3vw] mt-[5vw]'>Privacy Policy</h1>
+          <div className='p-[10vw]'>
+            <h2  classname="">Welcome to my website!</h2>
+            <br />
+            <p >This website showcases my personal portfolio and the software development projects I’ve built as a student for educational and learning purposes only. I am passionate about web development, AI, and software engineering, and this platform is meant to demonstrate my skills and progress to future employers, mentors, and collaborators.</p>
+            <br />
+            <h2 classname="">1. Educational Purpose</h2>
+            <p>All the projects featured on this website are created as part of my learning journey. These projects are:
+
+              Built for non-commercial, academic, or personal skill-building use only.
+
+              Developed under the guidance and mentorship of educators from platforms such as Web Prodigies, Code Help, Sheryians Coding School, and others.
+
+              Intended solely to demonstrate technical capabilities and portfolio development.
+            </p>
+            <br />
+            <h2 classname="">2. Information Collection</h2>
+            <p>This website does not collect any personal information from visitors automatically. However, basic non-personally identifiable information (such as IP address, browser type, and access time) may be collected through standard tools like Google Analytics to improve site performance and user experience.
+
+                You will never be asked to submit any sensitive personal data such as:
+
+                Credit card or financial details
+
+                Government-issued identification
+
+                Medical or health information
+            </p>
+            <br />
+            <h2 classname="text-2xl font-bold">3. Use of Cookies</h2>
+            <p>This site may use cookies or similar tracking technologies to analyze trends, administer the website, and gather aggregated demographic information. You can control the use of cookies at the individual browser level.</p>
+            
+            <br />
+
+            <h2 classname="text-2xl font-bold">4. Third-Party Links</h2>
+            <p>Some projects may include links to third-party services, APIs, or tools (such as OpenAI, Firebase, or GitHub). Please note that I do not control these external services and am not responsible for their privacy practices. Always review their privacy policies separately.</p>
+
+            <br />
+
+            <h2 classname="text-2xl font-bold">5. No Commercial Intent</h2>
+            <p>This site and all included projects are not intended for commercial use. I do not sell, trade, or rent any user data or access. These works are solely for academic display and job-seeking portfolio purposes.</p>
+            <br />
+            <h2 classname="text-2xl font-bold">6. Updates to This Policy</h2>
+            <p>This Privacy Policy may be updated occasionally to reflect feedback or changes in site practices. You are encouraged to review this policy periodically.</p>
+            <br />
+            <h2 classname="text-2xl font-bold">7. Contact</h2>
+            <p>If you have any questions or concerns regarding this Privacy Policy or the projects on this site, please feel free to contact me via the form provided on the Contact page.</p>
+          </div>
+        </div>
+      } />
+
+    </Routes>
+
+    
   )
 }
 
